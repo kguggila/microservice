@@ -1,4 +1,4 @@
-FROM adoptopenjdk:8-jdk
+FROM openjdk:8
 EXPOSE 9092
-COPY ./target/microservice.jar microservice.jar
-CMD ["java","-jar","microservice.jar"]
+ADD target/microservice.jar microservice.jar
+ENTRYPOINT ["java","-jar","/microservice.jar"]
